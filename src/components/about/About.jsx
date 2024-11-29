@@ -3,11 +3,29 @@ import "./about.css";
 import profile from "../../assets/profile.png";
 import CV from "../../assets/Kushal-Cv.pdf";
 import Info from "./Info";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
     <section className="section about" id="about">
-      <h2 className="section__title">About me</h2>
+      <motion.h2
+        className="section__title"
+        initial={{
+          opacity: 0,
+          // if odd index card,slide from right instead of left
+          x: 50,
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0, // Slide in to its original position
+          transition: {
+            duration: 1, // Animation duration
+          },
+        }}
+        viewport={{ once: true }}
+      >
+        About me
+      </motion.h2>
       <span className="section__subtitle">My Introduction</span>
       <div className="about__container container grid">
         <img src={profile} alt="" className="about__img" />
@@ -18,13 +36,16 @@ export default function About() {
             JavaScript, React, NodeJS, NextJS, MongoDB, GraphQL, Firebase, HTML,
             CSS, and MUI, delivering quality applications.
           </p>
-          <a
+          <motion.a
             download="Kushal_CV"
             href={CV}
             className="button__grad button button--flex"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             Download CV
-          </a>
+          </motion.a>
           <svg
             class="button__icon"
             xmlns="http://www.w3.org/2000/svg"

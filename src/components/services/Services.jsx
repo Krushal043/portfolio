@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./services.css";
 import { services } from "./data";
+import { motion } from "framer-motion";
 
 export default function Services() {
   const [toggleState, setToggleState] = useState(null);
@@ -11,7 +12,24 @@ export default function Services() {
 
   return (
     <section className="services section" id="services">
-      <h2 className="section__title">Services</h2>
+      <motion.h2
+        className="section__title"
+        initial={{
+          opacity: 0,
+          // if odd index card,slide from right instead of left
+          x: 50,
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0, // Slide in to its original position
+          transition: {
+            duration: 1, // Animation duration
+          },
+        }}
+        viewport={{ once: true }}
+      >
+        Services
+      </motion.h2>
       <span className="section__subtitle">What i offer</span>
 
       <div className="services__container container grid">

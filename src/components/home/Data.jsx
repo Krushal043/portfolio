@@ -1,10 +1,25 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function Data() {
+  const name = "Kushal Sojitra".split(" ");
+
   return (
     <div className="home__data">
       <h1 className="home__title">
-        Kushal Sojitra
+        {name.map((el, i) => (
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 1,
+              delay: i / 4,
+            }}
+            key={i}
+          >
+            {el}{" "}
+          </motion.span>
+        ))}
         <svg
           width="36"
           height="36"
@@ -60,7 +75,13 @@ export default function Data() {
         🚀 Frontend Maestro | JavaScript Jedi | Crafting Seamless Web
         Experiences 🌐✨
       </p>
-      <a href="contact" className="button__grad button button--flex">
+      <motion.a
+        href="#contact"
+        className="button__grad button button--flex"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      >
         Say Hello
         <svg
           class="button__icon"
@@ -79,7 +100,7 @@ export default function Data() {
             fill="var(--container-color)"
           ></path>
         </svg>
-      </a>
+      </motion.a>
     </div>
   );
 }

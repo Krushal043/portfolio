@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./qualification.css";
 import { educations, experiences, tabs } from "./data";
+import { motion } from "framer-motion";
 
 export default function Qualification() {
   const [toggleState, setToggleState] = useState(0);
@@ -11,12 +12,29 @@ export default function Qualification() {
 
   return (
     <section className="section qualification">
-      <h2 className="section__title">Qualification</h2>
+      <motion.h2
+        className="section__title"
+        initial={{
+          opacity: 0,
+          // if odd index card,slide from right instead of left
+          x: -50,
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0, // Slide in to its original position
+          transition: {
+            duration: 1, // Animation duration
+          },
+        }}
+        viewport={{ once: true }}
+      >
+        Qualification
+      </motion.h2>
       <span className="section__subtitle">My education and training</span>
       <div className="qualification__container container">
         <div className="qualification__tabs">
           {tabs?.map((tab, index) => (
-            <div
+            <motion.div
               key={tab?.id}
               onClick={() => handleTabToggle(index)}
               className={`${
@@ -24,10 +42,26 @@ export default function Qualification() {
                   ? "button qualification__active button__grad"
                   : "qualification__button_hover"
               } qualification__button  button--flex`}
+              initial={{
+                opacity: 0,
+                // if odd index card,slide from right instead of left
+                x: index % 2 ? 50 : -50,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0, // Slide in to its original position
+                transition: {
+                  duration: 1, // Animation duration
+                },
+              }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <i className={`${tab.icon} qualification__icon`}></i>
               {tab.title}
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -37,8 +71,24 @@ export default function Qualification() {
               toggleState === 0 && "qualification__content-active"
             }`}
           >
-            {educations?.map((education) => (
-              <div className="qualification__data" key={education?.id}>
+            {educations?.map((education, index) => (
+              <motion.div
+                className="qualification__data"
+                key={education?.id}
+                initial={{
+                  opacity: 0,
+                  // if odd index card,slide from right instead of left
+                  x: index % 2 ? 50 : -50,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0, // Slide in to its original position
+                  transition: {
+                    duration: 1, // Animation duration
+                  },
+                }}
+                viewport={{ once: true }}
+              >
                 {education?.id === 2 && (
                   <>
                     <div></div>
@@ -63,7 +113,7 @@ export default function Qualification() {
                     <span className="qualification__line"></span>
                   </div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
 

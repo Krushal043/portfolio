@@ -30,7 +30,7 @@
 @media screen and (max-width: 992px) {
   .scrollup {
     right: 1.5rem;
-    padding: 0.25rem 4rem;
+    /* padding: 0.25rem 4rem; */
   }
 
   .scrollup__icon {

@@ -116,7 +116,7 @@ button {
     #eef2f3 51%,
     #8e9eab 100%
   );
-  transition: 0.5s;
+  transition: 0.1s;
   background-size: 200% auto;
   opacity: 0.8;
 }
@@ -129,6 +129,17 @@ button {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--text-color);
+  transform-origin: 0%;
+  z-index: 52;
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/

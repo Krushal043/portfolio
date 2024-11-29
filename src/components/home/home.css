@@ -18,6 +18,7 @@
 .home__social-icon {
   font-size: 1.25rem;
   color: var(--title-color);
+  transition: 0.1s;
 }
 
 .home__social-icon:hover {

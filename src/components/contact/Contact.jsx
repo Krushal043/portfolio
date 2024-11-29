@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.css";
 import { contacts } from "./data";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -47,10 +48,42 @@ export default function Contact() {
 
   return (
     <section className="section contact" id="contact">
-      <h2 className="section__title">Get in touch</h2>
+      <motion.h2
+        className="section__title"
+        initial={{
+          opacity: 0,
+          // if odd index card,slide from right instead of left
+          x: -50,
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0, // Slide in to its original position
+          transition: {
+            duration: 1, // Animation duration
+          },
+        }}
+        viewport={{ once: true }}
+      >
+        Get in touch
+      </motion.h2>
       <span className="section__subtitle">Contact Me</span>
 
-      <div className="contact__container container grid">
+      <motion.div
+        className="contact__container container grid"
+        initial={{
+          opacity: 0,
+          // if odd index card,slide from right instead of left
+          x: 50,
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0, // Slide in to its original position
+          transition: {
+            duration: 1, // Animation duration
+          },
+        }}
+        viewport={{ once: true }}
+      >
         <div className="contact_content">
           <h3 className="contact__title">Talk to me</h3>
           <div className="contact__info">
@@ -109,10 +142,13 @@ export default function Contact() {
               )}
             </div>
 
-            <button
+            <motion.button
               type="submit"
               className="button button--flex button__grad"
               disabled={loading}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               Send Message
               <svg
@@ -132,10 +168,10 @@ export default function Contact() {
                   fill="var(--container-color)"
                 ></path>
               </svg>
-            </button>
+            </motion.button>
           </form>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

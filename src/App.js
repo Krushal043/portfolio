@@ -10,12 +10,20 @@ import ScrollUp from "./components/scrollup/ScrollUp";
 import Services from "./components/services/Services";
 import Skills from "./components/skills/Skills";
 import Testimonials from "./components/testimonials/Testimonials";
+import { motion, useScroll, useSpring } from "framer-motion";
 import StarsCanvas from "./star";
 
 function App() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
   return (
     <>
       <StarsCanvas />
+      <motion.div className="progress-bar" style={{ scaleX }} />
       <main className="main">
         <Header />
         <Home />

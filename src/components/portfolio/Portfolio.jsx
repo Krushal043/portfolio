@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./portfolio.css";
 import { Tooltip } from "react-tooltip";
 import { projects } from "./data";
+import { motion } from "framer-motion";
 
 export default function Portfolio() {
   const [toggleState, setToggleState] = useState(null);
@@ -12,11 +13,44 @@ export default function Portfolio() {
 
   return (
     <section className="section portfolio" id="portfolio">
-      <h2 className="section__title">Projects</h2>
+      <motion.h2
+        className="section__title"
+        initial={{
+          opacity: 0,
+          // if odd index card,slide from right instead of left
+          x: 50,
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0, // Slide in to its original position
+          transition: {
+            duration: 1, // Animation duration
+          },
+        }}
+        viewport={{ once: true }}
+      >
+        Projects
+      </motion.h2>
       <span className="section__subtitle">I've worked on</span>
       <div className="portfolio__container container grid">
         {projects?.map((project, index) => (
-          <div className="portfolio__content" key={project?.id}>
+          <motion.div
+            className="portfolio__content"
+            key={project?.id}
+            initial={{
+              opacity: 0,
+              // if odd index card,slide from right instead of left
+              x: index % 2 ? 50 : -50,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0, // Slide in to its original position
+              transition: {
+                duration: 1, // Animation duration
+              },
+            }}
+            viewport={{ once: true }}
+          >
             <div className="portfolio__group">
               <img src={project?.img} alt="" className="portfolio__img-image" />
             </div>
@@ -94,7 +128,7 @@ export default function Portfolio() {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
       <Tooltip id="role-tooltip" />
