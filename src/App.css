@@ -209,6 +209,7 @@ img {
   position: relative;
   z-index: 50;
   opacity: 0.8;
+  overflow: hidden;
 }
 
 /*=============== BREAKPOINTS ===============*/
