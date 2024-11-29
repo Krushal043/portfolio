@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./header.css";
 import { headerTab } from "./data";
+import Kushal from "../../assets/Kushal.png";
 
 export default function Header() {
   window.addEventListener("scroll", function (e) {
@@ -23,7 +24,8 @@ export default function Header() {
     <header className="header">
       <nav className="nav container">
         <a href="/" className="nav__logo">
-          Kushal
+          <img src={Kushal} width={45} height={45} alt="Kushal Sojitra" />
+          {/* Kushal */}
         </a>
         <div className={`nav__menu ${Toggle && "show-menu"}`}>
           <ul className="nav__list grid">
