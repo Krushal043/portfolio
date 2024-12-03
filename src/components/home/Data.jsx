@@ -1,11 +1,47 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 export default function Data() {
   const name = "Kushal Sojitra".split(" ");
 
   return (
     <div className="home__data">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <link rel="canonical" href="https://kushal-dev.netlify.app/" />
+        <meta
+          name="description"
+          content="Kushal Sojitra - Passionate Web Developer specializing in creating interactive, user-friendly web applications using modern frontend technologies like React, JavaScript, HTML, CSS, and more."
+        />
+        <meta
+          name="keywords"
+          content="Kushal Sojitra, Web Developer, JavaScript, React, Frontend Developer, Web Development, UI/UX Design, HTML, CSS, SEO, JavaScript Frameworks, Web Design"
+        />
+        <meta name="author" content="Kushal Sojitra" />
+        <meta property="og:title" content="Kushal Sojitra - Web Developer" />
+        <meta
+          property="og:description"
+          content="Kushal Sojitra is a passionate web developer specializing in crafting interactive, user-friendly web applications using modern technologies like React, JavaScript, and more."
+        />
+        <meta
+          property="og:image"
+          content="https://kushal-dev.netlify.app/your-image-path.jpg"
+        />
+        <meta property="og:url" content="https://kushal-dev.netlify.app/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Kushal Sojitra - Web Developer" />
+        <meta
+          name="twitter:description"
+          content="Kushal Sojitra is a passionate web developer creating interactive and seamless web experiences using modern frontend technologies like React and JavaScript."
+        />
+        <meta
+          name="twitter:image"
+          content="https://kushal-dev.netlify.app/your-image-path.jpg"
+        />
+        <meta name="twitter:creator" content="@kushal_sojitra" />
+      </Helmet>
+
       <h1 className="home__title">
         {name.map((el, i) => (
           <motion.span
