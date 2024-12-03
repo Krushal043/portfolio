@@ -142,6 +142,26 @@ img {
   z-index: 52;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--container-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--title-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--title-color-dark);
+}
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
   padding: 6rem 0 2rem;
