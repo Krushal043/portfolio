@@ -76,7 +76,7 @@ export let devTech = [
   { id: 2, name: "Github", img: github },
   { id: 3, name: "Gitlab", img: gitlab },
   { id: 4, name: "Notion", img: notion },
-  { id: 5, name: "Postman", img: postman },
-  { id: 6, name: "Jira", img: jira },
+  { id: 5, name: "Jira", img: jira },
+  { id: 6, name: "Postman", img: postman },
   { id: 7, name: "Linear", img: linear },
 ];

@@ -31,11 +31,11 @@
   background-image: linear-gradient(0deg, #74ebd5 0%, #9face6 100%);
 }
 
-.skills__container_two .skills__content:nth-child(1) {
+.skills__container .skills__content:nth-child(3) {
   background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
 }
 
-.skills__container_two .skills__content:nth-child(2) {
+.skills__container .skills__content:nth-child(4) {
   background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
 }
 

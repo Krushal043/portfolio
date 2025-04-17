@@ -31,8 +31,6 @@ export default function Skills() {
       <div className="skills__container container grid">
         <Design />
         <Frontend />
-      </div>
-      <div className="skills__container_two container grid">
         <Backend />
         <Other />
       </div>
