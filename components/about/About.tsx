@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { startDate, useStats } from './data';
 import useExperience from '@/hooks/useExperience';
 import { projects } from '../portfolio/data';
+import Ambient from '../Ambient';
 
 export default function About() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -117,6 +118,7 @@ export default function About() {
                     </div>
                 </div>
             </div>
+            <Ambient />
         </section>
     )
 }

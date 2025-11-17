@@ -4,6 +4,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { Skill, skills, specialties } from './data';
 import Image from 'next/image';
 import { colorMap } from '../services/data';
+import Ambient from '../Ambient';
 
 export default function Specialties() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -125,6 +126,7 @@ export default function Specialties() {
                     </div>
                 </div>
             </div>
+            <Ambient />
         </section>
     )
 }

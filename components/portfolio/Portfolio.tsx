@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { FiEye, FiArrowRight, FiStar, FiZap, } from 'react-icons/fi';
 import { categories, icons, Projects, projects, useStats } from './data';
 import Modal from '../model/Model';
+import Ambient from '../Ambient';
 
 export default function Portfolio() {
     const [activeCategory, setActiveCategory] = useState("All");
@@ -201,6 +202,7 @@ export default function Portfolio() {
                                     style={{ animationDelay: `${index * 100}ms` }}
                                     onMouseEnter={() => setHoveredProject(project.id)}
                                     onMouseLeave={() => setHoveredProject(null)}
+                                    onClick={() => setHoveredProject(project.id)}
                                 >
 
 
@@ -222,7 +224,7 @@ export default function Portfolio() {
                                     <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-purple-500/50 via-pink-500/50 to-purple-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(45deg, transparent, rgba(168,85,247,0.5), transparent, rgba(236,72,153,0.5), transparent)', backgroundSize: '200% 200%', animation: hoveredProject === project.id ? 'gradientShift 3s ease infinite' : 'none' }}></div>
 
                                     {/* Enhanced Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                    <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 ${hoveredProject === project.id && hoveredProject !== null && 'opacity-100'}`}>
                                         <div className="absolute bottom-0 left-0 right-0 p-8">
                                             <div className="space-y-4">
                                                 <div className="flex items-center justify-between">
@@ -289,6 +291,7 @@ export default function Portfolio() {
                     )}
                 </div>
             </div>
+            <Ambient />
 
             <Modal
                 isOpen={isOpen}

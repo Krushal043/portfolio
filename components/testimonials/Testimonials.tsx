@@ -3,6 +3,7 @@
 import { AnimatedTestimonials } from '@/ui/AnimatedTestimonials';
 import React, { useEffect, useState } from 'react'
 import { testimonials } from './data';
+import Ambient from '../Ambient';
 
 export default function Testimonials() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -44,6 +45,7 @@ export default function Testimonials() {
                     <AnimatedTestimonials testimonials={testimonials} />
                 </div>
             </div>
+            <Ambient />
         </section>
     )
 }

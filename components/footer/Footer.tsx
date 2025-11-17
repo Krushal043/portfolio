@@ -3,6 +3,7 @@
 import React from 'react';
 import { FiHeart, FiArrowUp } from 'react-icons/fi';
 import { quickContacts, quickLinks, services } from './data';
+import Ambient from '../Ambient';
 
 export default function Footer() {
     const scrollToTop = () => {
@@ -104,6 +105,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
+            <Ambient />
         </footer>
     )
 }

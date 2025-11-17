@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react';
 import { FiSend, FiCheck } from 'react-icons/fi';
 import { contactInfo, socialLinks } from './data';
 import emailjs from "@emailjs/browser";
+import Ambient from '../Ambient';
 
 export default function Contact() {
     const form = useRef<HTMLFormElement>(null);
@@ -236,6 +237,7 @@ export default function Contact() {
                     </div>
                 </div>
             </div>
+            <Ambient />
         </section>
     )
 }

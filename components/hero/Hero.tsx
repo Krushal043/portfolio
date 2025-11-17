@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { FiArrowDown, FiPlay, FiHeart, FiZap, FiStar, FiCode, FiLayers, FiTerminal } from 'react-icons/fi';
 import { dynamicWords, premiumSkills } from './data';
-import Ambient from './Ambient';
+import Ambient from '../Ambient';
 
 export default function Hero() {
     const [isLoaded, setIsLoaded] = useState(false);

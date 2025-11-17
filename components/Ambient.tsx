@@ -9,7 +9,7 @@ export default function Ambient() {
 
     useEffect(() => {
         // This runs ONLY in the browser → no mismatch
-        const newParticles = [...Array(15)].map((_, i) => ({
+        const newParticles = [...Array(50)].map((_, i) => ({
             key: i,
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
@@ -23,7 +23,7 @@ export default function Ambient() {
                         : 'w-1.5 h-1.5 bg-blue-400/20',
         }));
 
-        const newSparkles = [...Array(8)].map((_, i) => ({
+        const newSparkles = [...Array(30)].map((_, i) => ({
             key: `sparkle-${i}`,
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
