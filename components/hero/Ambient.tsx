@@ -1,9 +1,15 @@
-import React, { useMemo } from 'react'
+'use client'; // ← Add this at the top!
+
+import React, { useEffect, useState } from 'react';
 import { FiStar } from 'react-icons/fi';
 
 export default function Ambient() {
-    const particles = useMemo(() => {
-        return [...Array(15)].map((_, i) => ({
+    const [particles, setParticles] = useState<any[]>([]);
+    const [sparkles, setSparkles] = useState<any[]>([]);
+
+    useEffect(() => {
+        // This runs ONLY in the browser → no mismatch
+        const newParticles = [...Array(15)].map((_, i) => ({
             key: i,
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
@@ -16,51 +22,50 @@ export default function Ambient() {
                         ? 'w-0.5 h-0.5 bg-pink-400/40'
                         : 'w-1.5 h-1.5 bg-blue-400/20',
         }));
-    }, []);
 
-    const sparkles = useMemo(() => {
-        return [...Array(8)].map((_, i) => ({
+        const newSparkles = [...Array(8)].map((_, i) => ({
             key: `sparkle-${i}`,
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
             delay: `${Math.random() * 3}s`,
             duration: `${2 + Math.random() * 2}s`,
         }));
-    }, []);
-    return (
-        <>
-            {/* Enhanced Ambient Particles */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {/* Floating blurred dots */}
-                {particles.map((p) => (
-                    <div
-                        key={p.key}
-                        className={`absolute rounded-full animate-pulse ${p.sizeClass}`}
-                        style={{
-                            left: p.left,
-                            top: p.top,
-                            animationDelay: p.delay,
-                            animationDuration: p.duration,
-                        }}
-                    />
-                ))}
 
-                {/* Floating star sparkles */}
-                {sparkles.map((s) => (
-                    <div
-                        key={s.key}
-                        className="absolute w-2 h-2 animate-ping"
-                        style={{
-                            left: s.left,
-                            top: s.top,
-                            animationDelay: s.delay,
-                            animationDuration: s.duration,
-                        }}
-                    >
-                        <FiStar className="w-full h-full text-yellow-400/50" />
-                    </div>
-                ))}
-            </div>
-        </>
-    )
+        setParticles(newParticles);
+        setSparkles(newSparkles);
+    }, []);
+
+    // While loading, render nothing (or a static placeholder)
+    if (particles.length === 0) return null;
+
+    return (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {particles.map((p) => (
+                <div
+                    key={p.key}
+                    className={`absolute rounded-full animate-pulse ${p.sizeClass}`}
+                    style={{
+                        left: p.left,
+                        top: p.top,
+                        animationDelay: p.delay,
+                        animationDuration: p.duration,
+                    }}
+                />
+            ))}
+            {sparkles.map((s) => (
+                <div
+                    key={s.key}
+                    className="absolute w-2 h-2 animate-ping"
+                    style={{
+                        left: s.left,
+                        top: s.top,
+                        animationDelay: s.delay,
+                        animationDuration: s.duration,
+                    }}
+                >
+                    <FiStar className="w-full h-full text-yellow-400/50" />
+                </div>
+            ))}
+        </div>
+    );
 }
