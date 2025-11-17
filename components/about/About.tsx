@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { FiZap, FiStar } from 'react-icons/fi';
 import { startDate, useStats } from './data';
 import useExperience from '@/hooks/useExperience';
 import { projects } from '../portfolio/data';
@@ -79,8 +78,7 @@ export default function About() {
                                                 src="/kushal_1.jpg"
                                                 alt="Kushal Sojitra"
                                                 fill
-                                                className="object-cover"
-                                                sizes="128px"
+                                                className="object-fill"
                                                 priority
                                             />
                                         </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { Skill, skills, specialties } from './data';
 import Image from 'next/image';
 import { colorMap } from '../services/data';
@@ -89,16 +89,23 @@ export default function Specialties() {
                             {specialties.map((specialtie, index) => {
                                 const colors = getColorClasses(specialtie.color);
                                 return (
-                                    <>
+                                    <Fragment key={index}>
                                         {(specialtie?.category === activeSkill?.name || activeSkill?.name === "All") &&
                                             <a
-                                                key={index}
                                                 href="#specialties"
                                                 onMouseEnter={() => setHoveredSpecialtie(specialtie.id)}
                                                 onMouseLeave={() => setHoveredSpecialtie(null)}
                                                 rel="noopener noreferrer"
                                                 className={`group relative backdrop-blur-xl border border-white/10 rounded-3xl p-4 hover:border-white/50 transition-all duration-700 hover:scale-105 hover:-translate-y-2 flex items-center gap-4`}
                                             >
+
+                                                {/* Hover Glow Effect */}
+                                                <div className={`absolute inset-0 bg-gradient-to-r ${colors.gradient.replace('to-', 'via-')} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}></div>
+
+                                                {/* Animated Border */}
+                                                <div className={`absolute inset-0 rounded-3xl border border-transparent bg-gradient-to-r ${colors.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} style={{ padding: '1px', background: hoveredSpecialtie === specialtie.id ? `linear-gradient(45deg, transparent, ${specialtie.color === 'purple' ? 'rgba(168,85,247,0.3)' : specialtie.color === 'pink' ? 'rgba(236,72,153,0.3)' : 'rgba(59,130,246,0.3)'}, transparent)` : 'none', backgroundSize: '200% 200%', animation: hoveredSpecialtie === specialtie.id ? 'gradientShift 3s ease infinite' : 'none' }}></div>
+
+                                                {/* Animated Icon */}
                                                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors bg-white`}>
                                                     <Image
                                                         src={specialtie.img}
@@ -112,14 +119,9 @@ export default function Specialties() {
                                                     <p className={` font-medium`}>{specialtie.name}</p>
                                                     {/* <p className="text-gray-400 text-sm">{link.description}</p> */}
                                                 </div>
-                                                {/* Hover Glow Effect */}
-                                                <div className={`absolute inset-0 bg-gradient-to-r ${colors.gradient.replace('to-', 'via-')} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}></div>
-
-                                                {/* Animated Border */}
-                                                <div className={`absolute inset-0 rounded-3xl border border-transparent bg-gradient-to-r ${colors.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} style={{ padding: '1px', background: hoveredSpecialtie === specialtie.id ? `linear-gradient(45deg, transparent, ${specialtie.color === 'purple' ? 'rgba(168,85,247,0.3)' : specialtie.color === 'pink' ? 'rgba(236,72,153,0.3)' : 'rgba(59,130,246,0.3)'}, transparent)` : 'none', backgroundSize: '200% 200%', animation: hoveredSpecialtie === specialtie.id ? 'gradientShift 3s ease infinite' : 'none' }}></div>
                                             </a>
                                         }
-                                    </>
+                                    </Fragment>
                                 )
                             })}
                         </div>
