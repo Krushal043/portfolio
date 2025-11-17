@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { FiHeart, FiArrowUp, FiMail, FiMessageCircle, FiLinkedin } from 'react-icons/fi';
+import { FiHeart, FiArrowUp } from 'react-icons/fi';
 import { quickContacts, quickLinks, services } from './data';
 
 export default function Footer() {

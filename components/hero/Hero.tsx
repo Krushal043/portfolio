@@ -2,12 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import { FiArrowDown, FiPlay, FiHeart, FiZap, FiStar, FiCode, FiLayers, FiTerminal } from 'react-icons/fi';
 import { dynamicWords, premiumSkills } from './data';
+import Ambient from './Ambient';
 
 export default function Hero() {
     const [isLoaded, setIsLoaded] = useState(false);
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const [isTyping, setIsTyping] = useState(true);
-
 
     useEffect(() => {
         const timer = setTimeout(() => setIsLoaded(true), 300);
@@ -136,9 +136,9 @@ export default function Hero() {
                                     and <span className="text-blue-300 font-semibold">secure, efficient backend infrastructure </span>
                                     that empower businesses and deliver exceptional user experiences.
                                 </span>
-                                {/* Subtle background glow */}
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-blue-500/5 rounded-lg blur-sm"></div>
                             </p>
+                            {/* Subtle background glow */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-blue-500/5 rounded-lg blur-sm"></div>
                         </div>
 
                         {/* Premium Skills Showcase */}
@@ -220,41 +220,7 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
-
-            {/* Enhanced Ambient Particles */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(15)].map((_, i) => (
-                    <div
-                        key={i}
-                        className={`absolute rounded-full animate-pulse ${i % 3 === 0 ? 'w-1 h-1 bg-purple-400/30' :
-                            i % 3 === 1 ? 'w-0.5 h-0.5 bg-pink-400/40' :
-                                'w-1.5 h-1.5 bg-blue-400/20'
-                            }`}
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            animationDelay: `${Math.random() * 5}s`,
-                            animationDuration: `${3 + Math.random() * 4}s`,
-                        }}
-                    />
-                ))}
-
-                {/* Floating sparkles */}
-                {[...Array(8)].map((_, i) => (
-                    <div
-                        key={`sparkle-${i}`}
-                        className="absolute w-2 h-2 animate-ping"
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            animationDelay: `${Math.random() * 3}s`,
-                            animationDuration: `${2 + Math.random() * 2}s`,
-                        }}
-                    >
-                        <FiStar className="w-2 h-2 text-yellow-400/40" />
-                    </div>
-                ))}
-            </div>
+            <Ambient />
         </section>
     )
 }
