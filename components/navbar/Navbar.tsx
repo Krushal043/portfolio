@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { FiMenu, FiX, FiStar, FiDownload } from 'react-icons/fi';
 import { menuItems } from './data';
+import Image from 'next/image';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -81,9 +82,9 @@ export default function Navbar() {
                         }
                     `}>
                         {/* Logo/Brand */}
-                        <div className="flex items-center space-x-2 z-20">
-                            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                                <FiStar className="text-white text-sm" />
+                        <div className="flex items-center space-x-2 z-20 cursor-pointer" onClick={() => scrollToSection('home')} >
+                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                                <Image src="/kushal.png" alt="Logo" width={48} height={48} className='rounded-full' />
                             </div>
                             <span className="text-white font-bold text-xl tracking-tight">
                                 Kushal&nbsp;<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Sojitra</span>
@@ -161,7 +162,7 @@ export default function Navbar() {
                         </button>
                     </div>
                 </div>
-            </nav>
+            </nav >
 
             {/* Mobile Menu Overlay */}
             <div
@@ -175,7 +176,7 @@ export default function Navbar() {
                 `}
             >
                 {/* Backdrop */}
-                <div
+                < div
                     className="absolute inset-0 bg-black/50 backdrop-blur-xl"
                     onClick={() => setIsOpen(false)}
                 />
@@ -240,10 +241,10 @@ export default function Navbar() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
 
             {/* Dynamic cursor effect for desktop */}
-            <div
+            < div
                 className="hidden lg:block fixed pointer-events-none z-30 w-8 h-8 rounded-full bg-gradient-to-br from-purple-400/30 to-pink-400/30 blur-sm transition-all duration-300 ease-out"
                 style={{
                     left: mousePosition.x - 16,

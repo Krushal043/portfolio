@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { FiStar, FiZap, FiArrowRight, FiCheck, FiTrendingUp } from 'react-icons/fi';
 import { colorMap, services, stats } from './data';
+import Ambient from '../Ambient';
 
 export default function Services() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -165,7 +166,7 @@ export default function Services() {
                     </div>
                 </div>
             </div>
-
+            <Ambient />
             {/* Custom CSS for animations */}
             <style jsx>{`
         @keyframes gradientShift {

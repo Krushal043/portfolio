@@ -4,6 +4,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { Skill, skills, specialties } from './data';
 import Image from 'next/image';
 import { colorMap } from '../services/data';
+import Ambient from '../Ambient';
 
 export default function Specialties() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -96,7 +97,7 @@ export default function Specialties() {
                                                 onMouseEnter={() => setHoveredSpecialtie(specialtie.id)}
                                                 onMouseLeave={() => setHoveredSpecialtie(null)}
                                                 rel="noopener noreferrer"
-                                                className={`group relative backdrop-blur-xl border border-white/10 rounded-3xl p-4 hover:border-white/50 transition-all duration-700 hover:scale-105 hover:-translate-y-2 flex items-center gap-4`}
+                                                className={`group relative backdrop-blur-xl border border-white/10 rounded-3xl p-4 hover:border-white/50 transition-all duration-700 hover:scale-105 hover:-translate-y-2 flex items-center flex-col md:flex-row gap-4`}
                                             >
 
                                                 {/* Hover Glow Effect */}
@@ -115,10 +116,7 @@ export default function Specialties() {
                                                         className="object-contain"
                                                     />
                                                 </div>
-                                                <div>
-                                                    <p className={` font-medium`}>{specialtie.name}</p>
-                                                    {/* <p className="text-gray-400 text-sm">{link.description}</p> */}
-                                                </div>
+                                                <p className={`font-medium text-[12px] md:text-md text-white`}>{specialtie.name}</p>
                                             </a>
                                         }
                                     </Fragment>
@@ -128,6 +126,7 @@ export default function Specialties() {
                     </div>
                 </div>
             </div>
+            <Ambient />
         </section>
     )
 }

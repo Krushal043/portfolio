@@ -5,6 +5,7 @@ import { colorMap } from '../services/data';
 import { FiZap } from 'react-icons/fi';
 import { qualifications, icons, qualificationsInfos } from './data';
 import Image from 'next/image';
+import Ambient from '../Ambient';
 
 export default function Qualifications() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -160,10 +161,9 @@ export default function Qualifications() {
                             })}
                         </div>
                     </div>
-
-
                 </div>
             </div>
+            <Ambient />
         </section>
     )
 }
