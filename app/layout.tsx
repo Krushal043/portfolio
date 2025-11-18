@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import MouseOrbs from "./MouseOrbs";
+import CircularText from "@/ui/CircularText";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,6 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
       <body className={`${inter.className} antialiased `}>
+        <CircularText
+          text="WEB DEVELOPER*UI/UX DESIGNER*"
+          onHover="goBonkers"
+          spinDuration={10}
+          className=""
+        />
         <div className="mouse-interactive-orb mouse-interactive-orb-1" id="orb1"></div>
         <div className="mouse-interactive-orb mouse-interactive-orb-2" id="orb2"></div>
         {children}
