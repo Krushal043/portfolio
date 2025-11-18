@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from 'react';
 import { motion, useAnimation, useMotionValue, MotionValue, Transition } from 'motion/react';
+import { FiArrowUp } from 'react-icons/fi';
 interface CircularTextProps {
     text: string;
     spinDuration?: number;
@@ -121,6 +122,7 @@ const CircularText: React.FC<CircularTextProps> = ({
                     </span>
                 );
             })}
+            <FiArrowUp className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-8 w-8' />
         </motion.button>
     );
 };
