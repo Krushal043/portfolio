@@ -163,6 +163,7 @@ export default function Qualifications() {
                                                         height={300}
                                                         className="object-cover rounded-3xl mt-4 mx-auto transition-opacity duration-500"
                                                         priority
+                                                        loading='lazy'
                                                     />
                                                 }
                                             </div>
