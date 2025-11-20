@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { colorMap } from '../services/data';
 import { FiZap } from 'react-icons/fi';
 import { qualifications, icons, qualificationsInfos } from './data';
@@ -24,8 +24,6 @@ export default function Qualifications() {
     const getColorClasses = (color: string) => {
         return colorMap[color as keyof typeof colorMap] || colorMap.purple;
     };
-
-    console.log({ activeQualification })
 
     return (
         <section id="qualifications" className="relative min-h-screen py-20">
@@ -88,8 +86,8 @@ export default function Qualifications() {
                             {qualificationsInfos.map((qualificationsInfo, index) => {
                                 const colors = getColorClasses(qualificationsInfo.color);
                                 return (
-                                    <>
-                                        {qualificationsInfo.category === activeQualification && <div key={index}
+                                    <Fragment key={index}>
+                                        {qualificationsInfo.category === activeQualification && <div
                                             className={`group relative backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-white/20 transition-all duration-700 hover:scale-105 hover:-translate-y-2 ${qualificationsInfo.popular ? 'ring-2 ring-pink-500/30 shadow-2xl shadow-pink-500/10' : ''
                                                 }`}
                                             style={{ animationDelay: `${index * 100}ms` }}
@@ -162,8 +160,7 @@ export default function Qualifications() {
                                                         width={500}
                                                         height={300}
                                                         className="object-cover rounded-3xl mt-4 mx-auto transition-opacity duration-500"
-                                                        priority
-                                                        loading='lazy'
+                                                        loading="lazy"
                                                     />
                                                 }
                                             </div>
@@ -174,7 +171,7 @@ export default function Qualifications() {
                                             {/* Animated Border */}
                                             <div className={`absolute inset-0 rounded-3xl border border-transparent bg-gradient-to-r ${colors.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} style={{ padding: '1px', background: hoveredService === qualificationsInfo.id ? `linear-gradient(45deg, transparent, ${qualificationsInfo.color === 'purple' ? 'rgba(168,85,247,0.3)' : qualificationsInfo.color === 'pink' ? 'rgba(236,72,153,0.3)' : 'rgba(59,130,246,0.3)'}, transparent)` : 'none', backgroundSize: '200% 200%', animation: hoveredService === qualificationsInfo.id ? 'gradientShift 3s ease infinite' : 'none' }}></div>
                                         </div>}
-                                    </>
+                                    </Fragment>
                                 );
                             })}
                         </div>
