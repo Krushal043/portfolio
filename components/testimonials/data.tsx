@@ -34,4 +34,32 @@ export const testimonials = [
         designation: "SVP of Technology, FutureNet",
         src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3",
     },
+    {
+        quote:
+            "Our global teams consolidated 17 disconnected systems into one unified workflow engine. Execution time for cross-regional processes dropped by 63%. Leadership finally has real-time visibility across markets — something we’ve been trying to achieve for nearly a decade.",
+        name: "Ava Mitchell",
+        designation: "Chief Operating Officer, GlobalCore",
+        src: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3",
+    },
+    {
+        quote:
+            "The predictive analytics layer identified bottlenecks we didn’t even know existed. Within the first month, we saved 420+ engineering hours and reduced infrastructure waste by 32%. It’s the closest thing to having an always-on optimization team.",
+        name: "Daniel Brooks",
+        designation: "Head of Data Engineering, QuantumOps",
+        src: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=3600&auto=format&fit=crop&ixlib=rb-4.0.3",
+    },
+    {
+        quote:
+            "Our onboarding time for new enterprise clients went from 3 weeks to 72 hours. The automation playbooks handle 90% of setup tasks, enabling our customer success team to focus on strategy instead of firefighting. Churn dropped 18% in the first quarter.",
+        name: "Priya Desai",
+        designation: "Director of Customer Success, NexaCloud",
+        src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=3600&auto=format&fit=crop&ixlib=rb-4.0.3",
+    },
+    {
+        quote:
+            "The platform’s real-time governance controls eliminated shadow IT and brought full compliance across 40+ business units. Our audit preparation time shrank from months to days. This is the first solution that scales security without slowing innovation.",
+        name: "Robert Hayes",
+        designation: "Chief Information Security Officer, SecureWave",
+        src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3",
+    },
 ];

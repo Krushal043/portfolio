@@ -97,7 +97,7 @@ const CircularText: React.FC<CircularTextProps> = ({
 
     return (
         <motion.button
-            className={`fixed bottom-5 right-5 rounded-full w-[150px] h-[150px] font-black text-white text-center cursor-pointer origin-center z-50 ${className} scroll-smooth`}
+            className={`fixed bottom-5 right-5 rounded-full w-[90px] h-[90px] md:w-[150px] md:h-[150px] font-black text-white text-center cursor-pointer origin-center z-50 ${className} scroll-smooth`}
             onClick={scrollToTop}
             style={{ rotate: rotation }}
             initial={{ rotate: 0 }}
@@ -115,14 +115,14 @@ const CircularText: React.FC<CircularTextProps> = ({
                 return (
                     <span
                         key={i}
-                        className="absolute inline-block inset-0 text-sm transition-all duration-500 ease-[cubic-bezier(0,0,0,1)]"
+                        className="absolute inline-block inset-0 text-[8px] md:text-sm transition-all duration-500 ease-[cubic-bezier(0,0,0,1)]"
                         style={{ transform, WebkitTransform: transform }}
                     >
                         {letter}
                     </span>
                 );
             })}
-            <FiArrowUp className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-8 w-8' />
+            <FiArrowUp className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-4 w-4 md:h-8 md:w-8' />
         </motion.button>
     );
 };

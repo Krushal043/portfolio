@@ -1,11 +1,12 @@
 import React from 'react';
-import { FiBook, FiBriefcase } from 'react-icons/fi';
+import { FiBook, FiBookOpen, FiBriefcase } from 'react-icons/fi';
 
-export const qualifications = ["Experiences", "Educations"];
+export const qualifications = ["Experiences", "Educations", "Certificates"];
 
 export const icons = {
     "Experiences": <FiBriefcase className="w-4 h-4" />,
     "Educations": <FiBook className="w-4 h-4" />,
+    "Certificates": <FiBookOpen className="w-4 h-4" />,
 };
 
 export const qualificationsInfos: QualificationsInfo[] = [
@@ -58,7 +59,7 @@ export const qualificationsInfos: QualificationsInfo[] = [
         category: "Experiences",
     },
     {
-        id: 1,
+        id: 5,
         label: "Parul University",
         description: "Master of Computer Application [MCA]",
         date: "July 2020 - October 2022",
@@ -69,7 +70,7 @@ export const qualificationsInfos: QualificationsInfo[] = [
         category: "Educations",
     },
     {
-        id: 2,
+        id: 6,
         label: "Sutex Bank College of Computer Applications & Science",
         description: "Bachelor of Computer Applications [BCA]",
         date: "May 2017 - June 2020",
@@ -79,6 +80,58 @@ export const qualificationsInfos: QualificationsInfo[] = [
         tag: "Bachelors",
         category: "Educations",
     },
+    {
+        id: 7,
+        label: "Foundations of User Experience (UX) Design",
+        description:
+            "A foundational UX design program introducing user research, journey mapping, personas, wireframing, and prototyping. The course teaches design thinking, usability testing, and essential collaboration workflows used by modern product teams. Learners gain practical experience with low-fidelity and mid-fidelity design processes, enabling them to understand how to create intuitive, user-centered digital experiences.",
+        date: "2021",
+        image: "/certificates/coursera.png",
+        preview: "/certificates/c1.png",
+        popular: true,
+        color: "blue",
+        tag: "Coursera",
+        category: "Certificates",
+    },
+    {
+        id: 8,
+        label: "Advanced CSS and Sass: Flexbox, Grid, Animations and More!",
+        description:
+            "A comprehensive deep dive into modern CSS, focusing on Flexbox, CSS Grid, responsive layout architecture, advanced animations, and scalable design patterns. The course also emphasizes Sass workflows, component-driven styling, and performance-focused approaches. Includes multiple real-world projects designed to build production-ready UI skills and elevate front-end development expertise.",
+        date: "2020",
+        image: "/certificates/udemy.png",
+        preview: "/certificates/c2.png",
+        popular: true,
+        color: "red",
+        tag: "Udemy",
+        category: "Certificates",
+    },
+    {
+        id: 9,
+        label: "The Complete JavaScript Course 2021: From Zero to Expert!",
+        description:
+            "A complete, hands-on JavaScript learning experience covering core fundamentals, ES6+ features, asynchronous programming, data structures, and DOM manipulation. The course includes real-world projects, coding challenges, and advanced concepts like OOP, functional programming, and modern tooling. Designed to transform beginners into confident, job-ready JavaScript developers capable of building scalable, interactive applications.",
+        date: "2020",
+        image: "/certificates/udemy.png",
+        preview: "/certificates/c3.png",
+        popular: true,
+        color: "orange",
+        tag: "Udemy",
+        category: "Certificates",
+    },
+    {
+        id: 10,
+        label: "Understanding Redux: A Beginner's Guide to State Management",
+        description:
+            "A beginner-friendly introduction to Redux, covering core principles such as actions, reducers, the store, middleware, and unidirectional data flow. The course provides hands-on examples, practical state architecture patterns, and real project scenarios. It helps developers understand how to manage complex application state reliably and integrate Redux effectively into modern front-end applications.",
+        date: "2020",
+        image: "/certificates/educative.png",
+        preview: "/certificates/c4.png",
+        popular: true,
+        color: "green",
+        tag: "Educative",
+        category: "Certificates",
+    }
 ];
 
 interface QualificationsInfo {
@@ -92,4 +145,5 @@ interface QualificationsInfo {
     color: string;
     tag?: string;
     category: string;
+    preview?: string;
 }
