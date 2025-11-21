@@ -7,7 +7,7 @@ export default function PageLoader() {
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        const timer = setTimeout(() => setLoading(false), 300);
+        const timer = setTimeout(() => setLoading(false), 500);
         return () => clearTimeout(timer);
     }, []);
 
