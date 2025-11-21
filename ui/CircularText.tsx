@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useAnimation, useMotionValue, MotionValue, Transition } from 'motion/react';
 import { FiArrowUp } from 'react-icons/fi';
 interface CircularTextProps {
@@ -36,6 +36,12 @@ const CircularText: React.FC<CircularTextProps> = ({
     const letters = Array.from(text);
     const controls = useAnimation();
     const rotation: MotionValue<number> = useMotionValue(0);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setIsLoaded(true), 1300);
+        return () => clearTimeout(timer);
+    }, []);
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -97,7 +103,7 @@ const CircularText: React.FC<CircularTextProps> = ({
 
     return (
         <motion.button
-            className={`fixed bottom-5 right-5 rounded-full w-[90px] h-[90px] md:w-[150px] md:h-[150px] font-black text-white text-center cursor-pointer origin-center z-50 ${className} scroll-smooth`}
+            className={`fixed bottom-5 right-5 rounded-full w-[90px] h-[90px] md:w-[150px] md:h-[150px] font-black text-white text-center cursor-pointer origin-center z-50 ${className} scroll-smooth ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             onClick={scrollToTop}
             style={{ rotate: rotation }}
             initial={{ rotate: 0 }}

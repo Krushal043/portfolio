@@ -18,6 +18,11 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
+    domains: [
+      "api.microlink.io", // Microlink Image Preview
+    ],
+    deviceSizes: [320, 420, 768, 1024, 1280, 1536],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
   },
 };
 

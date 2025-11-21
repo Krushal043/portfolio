@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { FiMenu, FiX, FiStar, FiDownload } from 'react-icons/fi';
+import { FiMenu, FiX, FiDownload } from 'react-icons/fi';
 import { menuItems } from './data';
 import Image from 'next/image';
 
@@ -9,6 +9,12 @@ export default function Navbar() {
     const [activeSection, setActiveSection] = useState('home');
     const [scrolled, setScrolled] = useState(false);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setIsLoaded(true), 1300);
+        return () => clearTimeout(timer);
+    }, []);
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
@@ -71,7 +77,7 @@ export default function Navbar() {
         <>
             {/* Premium Navigation Container */}
             <nav className="fixed top-0 left-0 right-0 z-50 px-4 py-4">
-                <div className="max-w-7xl mx-auto">
+                <div className={`max-w-7xl mx-auto ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                     <div className={`
                         relative flex items-center justify-between
                         px-6 py-4 rounded-3xl
