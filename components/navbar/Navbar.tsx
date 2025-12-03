@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { FiMenu, FiX, FiDownload } from 'react-icons/fi';
 import { menuItems } from './data';
 import Image from 'next/image';
+import ThemeSelector from '../theme/ThemeSelector';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -92,7 +93,7 @@ export default function Navbar() {
                             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
                                 <Image src="/kushal.png" alt="Logo" width={48} height={48} className='rounded-full' />
                             </div>
-                            <span className="text-white font-bold text-xl tracking-tight">
+                            <span className="text-white font-bold text-xl tracking-tight hidden sm:inline-block">
                                 Kushal&nbsp;<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Sojitra</span>
                             </span>
                         </div>
@@ -129,43 +130,52 @@ export default function Navbar() {
                                 ))}
                             </ul>
 
+                            {/* Color Selector */}
+                            <ThemeSelector />
+
                             {/* Resume Download Button - Desktop */}
                             <button
                                 onClick={handleResumeDownload}
-                                className="group px-6 sm:px-8 lg:px-8 py-3 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white font-bold text-base rounded-full overflow-hidden hover:scale-105 sm:hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-500 w-full sm:w-auto"
+                                title='Download Resume'
+                                className="group p-4 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white font-bold text-base rounded-full overflow-hidden hover:scale-105 sm:hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-500 w-full sm:w-auto border-2 border-white/50"
                             >
                                 <span className="relative z-10 flex items-center gap-2">
-                                    <FiDownload className="text-lg group-hover:animate-bounce" />
-                                    Resume
+                                    <FiDownload className="text-lg group-hover:animate-bounce w-4 h-4" />
                                 </span>
                                 <div className="absolute inset-0 bg-white/20 scale-0 group-hover:scale-100 transition-transform duration-500 rounded-2xl" />
                             </button>
                         </div>
 
-                        {/* Mobile Menu Button */}
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className={`
+                        <div className="flex items-center space-x-4 lg:hidden">
+                            {/* Color Selector */}
+                            <div className='inline-block sm:hidden'>
+                                <ThemeSelector />
+                            </div>
+                            {/* Mobile Menu Button */}
+                            <button
+                                onClick={() => setIsOpen(!isOpen)}
+                                className={`
                                 lg:hidden relative z-20 flex items-center justify-center p-3 rounded-2xl
                                 transition-all duration-300 ease-out
                                 ${scrolled ? 'bg-white/10 backdrop-blur-sm' : 'bg-white/5'}
                                 hover:bg-white/20 hover:scale-105
                                 text-white
                             `}
-                            aria-label="Toggle Menu"
-                        >
-                            <div className="relative w-6 h-6 flex items-center justify-center">
-                                {!isOpen ? (
-                                    <span className={`block transition-all duration-300 ${isOpen ? '' : '-translate-y-0.5'}`}>
-                                        <FiMenu size={24} />
-                                    </span>
-                                ) : (
-                                    <span className="block transition-all duration-300">
-                                        <FiX size={24} />
-                                    </span>
-                                )}
-                            </div>
-                        </button>
+                                aria-label="Toggle Menu"
+                            >
+                                <div className="relative w-6 h-6 flex items-center justify-center">
+                                    {!isOpen ? (
+                                        <span className={`block transition-all duration-300 ${isOpen ? '' : '-translate-y-0.5'}`}>
+                                            <FiMenu size={24} />
+                                        </span>
+                                    ) : (
+                                        <span className="block transition-all duration-300">
+                                            <FiX size={24} />
+                                        </span>
+                                    )}
+                                </div>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </nav >

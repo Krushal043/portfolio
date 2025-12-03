@@ -74,7 +74,7 @@ export default function About() {
                                 <div className="relative flex gap-20 items-center justify-center flex-col">
                                     {/* Profile Image */}
                                     <div className="relative">
-                                        <div className="aspect-square w-64 mx-auto rounded-xl overflow-hidden backdrop-blur-xl border border-white/10 group-hover:scale-105 transition-all duration-500">
+                                        <div className="aspect-square relative w-64 mx-auto rounded-xl overflow-hidden backdrop-blur-xl border border-white/10 group-hover:scale-105 transition-all duration-500">
                                             <Image
                                                 src="/kushal_1.jpg"
                                                 alt="Kushal Sojitra"

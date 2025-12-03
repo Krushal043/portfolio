@@ -13,13 +13,16 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "unsplash.com/photos",
+        hostname: "unsplash.com",
+        port: "",
+        pathname: "/photos/**",
+      },
+      {
+        protocol: "https",
+        hostname: "api.microlink.io",
         port: "",
         pathname: "/**",
       },
-    ],
-    domains: [
-      "api.microlink.io", // Microlink Image Preview
     ],
     deviceSizes: [320, 420, 768, 1024, 1280, 1536],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
