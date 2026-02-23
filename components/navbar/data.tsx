@@ -3,6 +3,6 @@ export const menuItems = [
     { id: 'about', label: 'About' },
     { id: 'portfolio', label: 'Portfolio' },
     { id: 'services', label: 'Services' },
-    { id: 'testimonials', label: 'Testimonials' },
+    // { id: 'testimonials', label: 'Testimonials' },
     { id: 'contact', label: 'Contact' },
 ];

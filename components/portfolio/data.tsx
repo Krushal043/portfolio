@@ -1,5 +1,5 @@
 import { AiFillTrophy } from "react-icons/ai";
-import { FiGlobe, FiGrid, FiShoppingCart, FiStar, FiTool, FiZap } from "react-icons/fi";
+import { FiCopy, FiGlobe, FiGrid, FiShoppingCart, FiStar, FiTool, FiZap } from "react-icons/fi";
 import { testimonials } from "../testimonials/data";
 import { startDate } from "../about/data";
 import useExperience from "@/hooks/useExperience";
@@ -38,7 +38,8 @@ export const icons = {
     "E-Commerce": <FiShoppingCart className="w-4 h-4" />,
     "Sports": <AiFillTrophy className="w-4 h-4" />,
     "Tools": <FiTool className="w-4 h-4" />,
-    "Gaming": <FiGrid className="w-4 h-4" />
+    "Gaming": <FiGrid className="w-4 h-4" />,
+    "Clones": <FiCopy className="w-4 h-4" />
 };
 export const categories = [
     {
@@ -82,6 +83,12 @@ export const categories = [
         title: "Gaming Projects",
         spotlightTitle: "Interactive Entertainment",
         description: "Engaging games and gaming platforms with immersive graphics, real-time multiplayer, and creative gameplay mechanics."
+    },
+    {
+        name: "Clones",
+        title: "Clone Projects",
+        spotlightTitle: "Recreated Digital Experiences",
+        description: "Replicated popular websites and applications to demonstrate technical skills and design understanding."
     }
 ];
 
@@ -441,4 +448,60 @@ export const projects: Projects[] = [
         ],
         panel: [{ id: 1111, name: "Website" }],
     },
+    {
+        id: 12,
+        name: "Banking",
+        img: "/projects/banking_logo.png",
+        logo: "/projects/banking_logo.png",
+        url: "https://github.com/Krushal043/banking",
+        year: "2025",
+        client: "Personal Project",
+        category: "Clones",
+        role: [
+            { id: 12001, info: "Frontend Development: Developed and implemented responsive and user-friendly interfaces, ensuring a seamless user experience." },
+            { id: 12002, info: "UI/UX Design: Crafted intuitive wireframes, prototypes, and high-fidelity designs in Figma to enhance user engagement and accessibility." },
+            { id: 12003, info: "State Management: Implemented efficient state handling using React hooks and Context API for scalable data flow." },
+            { id: 12004, info: "Responsive Design: Ensured cross-device compatibility with Bootstrap and custom CSS media queries." },
+            { id: 12005, info: "Backend Integration: Connected frontend with .NET APIs for real-time data synchronization and CRUD operations." }
+        ],
+        tech: [
+            { id: 1201, tech: "Javascript", img: "/design_tools/javascript.svg" },
+            { id: 1202, tech: "NextJS", img: "/design_tools/nextjs.svg" },
+            { id: 1204, tech: "CSS", img: "/design_tools/css.svg" },
+            { id: 1205, tech: "Git", img: "/design_tools/git.svg" },
+            { id: 1206, tech: "Github", img: "/design_tools/github.svg" },
+            { id: 1207, tech: "Tailwind", img: "/design_tools/tailwind.svg" },
+            { id: 1208, tech: "Figma", img: "/design_tools/figma.svg" },
+            { id: 1209, tech: "TypeScript", img: "/design_tools/typescript.svg" },
+        ],
+        panel: [{ id: 1211, name: "Website" }],
+    },
+    {
+        id: 13,
+        name: "Meeting Web - YMeet",
+        img: "/projects/meetingweb.png",
+        logo: "/projects/meetingweb_logo.png",
+        url: "https://github.com/Krushal043/meeting",
+        year: "2025",
+        client: "Personal Project",
+        category: "Clones",
+        role: [
+            { id: 13001, info: "Frontend Development: Developed and implemented responsive and user-friendly interfaces, ensuring a seamless user experience." },
+            { id: 13002, info: "UI/UX Design: Crafted intuitive wireframes, prototypes, and high-fidelity designs in Figma to enhance user engagement and accessibility." },
+            { id: 13003, info: "State Management: Implemented efficient state handling using React hooks and Context API for scalable data flow." },
+            { id: 13004, info: "Responsive Design: Ensured cross-device compatibility with Bootstrap and custom CSS media queries." },
+            { id: 13005, info: "Backend Integration: Connected frontend with .NET APIs for real-time data synchronization and CRUD operations." }
+        ],
+        tech: [
+            { id: 1301, tech: "Javascript", img: "/design_tools/javascript.svg" },
+            { id: 1302, tech: "NextJS", img: "/design_tools/nextjs.svg" },
+            { id: 1304, tech: "CSS", img: "/design_tools/css.svg" },
+            { id: 1305, tech: "Git", img: "/design_tools/git.svg" },
+            { id: 1306, tech: "Github", img: "/design_tools/github.svg" },
+            { id: 1307, tech: "Tailwind", img: "/design_tools/tailwind.svg" },
+            { id: 1308, tech: "Figma", img: "/design_tools/figma.svg" },
+            { id: 1309, tech: "TypeScript", img: "/design_tools/typescript.svg" },
+        ],
+        panel: [{ id: 1311, name: "Website" }],
+    }
 ];

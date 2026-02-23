@@ -6,6 +6,7 @@ import { FiEye, FiArrowRight, FiStar, FiZap, } from 'react-icons/fi';
 import { categories, icons, Projects, projects, useStats } from './data';
 import Modal from '../model/Model';
 import Ambient from '../Ambient';
+import Link from 'next/link';
 
 export default function Portfolio() {
     const [activeCategory, setActiveCategory] = useState("All");
@@ -236,10 +237,9 @@ export default function Portfolio() {
                                                 <h3 className="text-2xl font-bold text-white leading-tight">
                                                     {project.name}
                                                 </h3>
-                                                <p className="text-white/80 text-sm leading-relaxed hover:text-purple-400 cursor-pointer">
-                                                    {project.category === "UI/UX" ? <a href={project.url} target="_blank" rel="noopener noreferrer">{project.name}</a> : project.url}
-                                                    {/* {project.url} */}
-                                                </p>
+                                                <Link href={project.url} className="text-white/80 text-sm leading-relaxed hover:text-purple-400 cursor-pointer">
+                                                    {project.url}
+                                                </Link>
                                                 {project.client && (
                                                     <p className="text-white/60 text-xs">
                                                         Client: <span className="text-purple-400">{project.client}</span>

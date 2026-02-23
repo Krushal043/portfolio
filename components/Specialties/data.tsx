@@ -106,6 +106,15 @@ export const specialties = [
         url: "https://nextjs.org/"
     },
     {
+        id: 36,
+        name: "TypeScript",
+        value: "TypeScript",
+        img: "/design_tools/typescript.svg",
+        category: "Frontend",
+        color: "blue",
+        url: "https://www.typescriptlang.org/"
+    },
+    {
         id: 7,
         name: "ElectronJS",
         value: "ElectronJS",
@@ -304,6 +313,15 @@ export const specialties = [
         category: "Backend",
         color: "cyan",
         url: "https://www.mysql.com/"
+    },
+    {
+        id: 37,
+        name: "Clerk",
+        value: "Clerk",
+        img: "/design_tools/clerk.svg",
+        category: "Backend",
+        color: "blue",
+        url: "https://clerk.com/"
     },
 
     // ── Dev Tools ──────────────────

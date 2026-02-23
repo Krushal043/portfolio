@@ -76,7 +76,7 @@ export default function About() {
                                     <div className="relative">
                                         <div className="aspect-square relative w-64 mx-auto rounded-xl overflow-hidden backdrop-blur-xl border border-white/10 group-hover:scale-105 transition-all duration-500">
                                             <Image
-                                                src="/kushal_1.jpg"
+                                                src="/profile.png"
                                                 alt="Kushal Sojitra"
                                                 fill
                                                 className="object-fill"
