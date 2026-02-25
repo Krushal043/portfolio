@@ -103,15 +103,34 @@ export default function Hero() {
                             </div>
 
                             {/* Dynamic subtitle with word rotation */}
-                            <div className="relative h-12 flex items-center justify-center">
-                                <h2 className={`text-xl sm:text-2xl lg:text-3xl font-light text-purple-300 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-                                    style={{ transitionDelay: '400ms' }}>
-                                    <span className="text-white/90">I Build </span>
-                                    <span className={`bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent font-semibold transition-all duration-500 ${isTyping ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-                                        {dynamicWords[currentWordIndex]}
-                                    </span>
-                                    <span className="text-white/90"> Solutions</span>
-                                </h2>
+                            <div className="relative flex flex-col items-center justify-center space-y-3">
+                                <div className="relative h-12 flex items-center justify-center">
+                                    <h2
+                                        className={`text-xl sm:text-2xl lg:text-3xl font-light text-purple-300 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                                            }`}
+                                        style={{ transitionDelay: '400ms' }}
+                                    >
+                                        <span className="text-white/90">I Build </span>
+
+                                        <span
+                                            className={`bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent font-semibold transition-all duration-500 ${isTyping ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                                                }`}
+                                        >
+                                            {dynamicWords[currentWordIndex]}
+                                        </span>
+
+                                        <span className="text-white/90"> Solutions</span>
+                                    </h2>
+                                </div>
+
+                                {/* New Line Added */}
+                                <p
+                                    className={`text-md sm:text-base lg:text-lg text-white/80 font-light tracking-wide transition-all duration-1000 animate-pulseGlow ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                                        }`}
+                                    style={{ transitionDelay: '700ms' }}
+                                >
+                                    Modern Web Design & Front-End Excellence, Powered by End-to-End Full-Stack and SaaS Development Solutions
+                                </p>
                             </div>
 
                             {/* Enhanced accent line with animation */}

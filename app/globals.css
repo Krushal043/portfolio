@@ -40,7 +40,8 @@ body::before {
   right: 0;
   bottom: 0;
   z-index: -2;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 20% 50%,
       rgba(168, 85, 247, 0.15) 0%,
       transparent 50%
@@ -67,7 +68,8 @@ body::after {
   right: 0;
   bottom: 0;
   z-index: -1;
-  background: linear-gradient(rgba(168, 85, 247, 0.03) 1px, transparent 1px),
+  background:
+    linear-gradient(rgba(168, 85, 247, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(168, 85, 247, 0.03) 1px, transparent 1px);
   background-size: 100px 100px;
   opacity: 0.4;
@@ -109,21 +111,16 @@ body::after {
 
 /* Grid Pattern Background */
 .bg-grid-pattern {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px
-    ),
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
 .bg-grid {
   background-size: 30px 30px;
-  background-image: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.05) 1px,
-      transparent 1px
-    ),
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
@@ -150,8 +147,12 @@ body::after {
     rgba(255, 255, 255, 0.05),
     rgba(255, 255, 255, 0)
   );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none; /* Improve performance by ignoring mouse events */
@@ -331,7 +332,9 @@ body::after {
   animation-play-state: paused;
   transform: translateZ(30px) scale(1.2);
   border-color: rgba(139, 92, 246, 0.5);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 30px rgba(139, 92, 246, 0.2);
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.2),
+    0 0 30px rgba(139, 92, 246, 0.2);
 }
 
 .tool-icon:hover img,
@@ -545,7 +548,8 @@ body::after {
 .premium-button-primary {
   background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
   color: white;
-  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3),
+  box-shadow:
+    0 8px 30px rgba(99, 102, 241, 0.3),
     0 4px 15px rgba(139, 92, 246, 0.2);
 }
 
@@ -561,7 +565,8 @@ body::after {
 .premium-button-primary:hover,
 .premium-button-secondary:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4),
+  box-shadow:
+    0 15px 40px rgba(99, 102, 241, 0.4),
     0 8px 25px rgba(139, 92, 246, 0.3);
 }
 
@@ -641,4 +646,18 @@ body::after {
 
 .animate-spin-scale {
   animation: spin-scale 0.8s ease-out forwards;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(168, 85, 247, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(236, 72, 153, 0.6);
+  }
+}
+
+.animate-pulseGlow {
+  animation: pulseGlow 3s ease-in-out infinite;
 }

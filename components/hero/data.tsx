@@ -1,6 +1,13 @@
 import { FiFigma, FiLayers, FiMonitor, FiServer } from "react-icons/fi";
 
-export const dynamicWords = ['FULL-STACK', 'VERSATILE', 'PROBLEM-SOLVER', 'SCALABLE', 'EFFICIENT', 'ADAPTABLE'];
+export const dynamicWords = [
+    'FULL-STACK',
+    'VERSATILE',
+    'PROBLEM-SOLVER',
+    'SCALABLE',
+    'EFFICIENT',
+    'ADAPTABLE'
+];
 
 export const premiumSkills = [
     {

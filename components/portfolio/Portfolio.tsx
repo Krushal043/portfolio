@@ -13,7 +13,7 @@ export default function Portfolio() {
     const [hoveredProject, setHoveredProject] = useState<number | null>(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [viewMode, setViewMode] = useState<'grid' | 'masonry'>('grid');
-    const [visibleProjects, setVisibleProjects] = useState(6);
+    const [visibleProjects, setVisibleProjects] = useState(4);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedProject, setSelectedProject] = useState<Projects | null>(null);
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -49,7 +49,7 @@ export default function Portfolio() {
 
     // Reset visible projects when category changes
     useEffect(() => {
-        setVisibleProjects(6);
+        setVisibleProjects(4);
     }, [activeCategory]);
 
     const getCategoryIcon = (category: string) => {
@@ -192,20 +192,19 @@ export default function Portfolio() {
                         ))}
 
                         <div className={`${viewMode === 'masonry'
-                            ? 'columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8'
-                            : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
+                            ? 'columns-1 md:columns-2 gap-8 space-y-8'
+                            : 'grid grid-cols-1 gap-8'
                             }`}>
                             {projectsToDisplay.map((project, index) => (
                                 <div
                                     key={project.id}
-                                    className={`group relative ${viewMode === 'masonry' ? 'break-inside-avoid' : 'aspect-[4/5]'
+                                    className={`group relative ${viewMode === 'masonry' ? 'break-inside-avoid aspect-[4/5]' : 'aspect-[10/5]'
                                         } ${hoveredProject !== project.id && hoveredProject !== null && 'blur-sm'} rounded-3xl overflow-hidden backdrop-blur-sm border border-white/10 hover:border-purple-400/50 transition-all duration-700 hover:scale-105 hover:-translate-y-2`}
                                     style={{ animationDelay: `${index * 100}ms` }}
                                     onMouseEnter={() => setHoveredProject(project.id)}
                                     onMouseLeave={() => setHoveredProject(null)}
                                     onClick={() => setHoveredProject(project.id)}
                                 >
-
 
                                     {/* Featured Badge */}
                                     {project.featured && <div className="absolute top-4 left-4 z-20 bg-gradient-to-r from-yellow-500 to-orange-500 text-black px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
